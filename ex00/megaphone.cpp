@@ -6,11 +6,11 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 16:45:23 by mpapin            #+#    #+#             */
-/*   Updated: 2025/06/28 20:29:37 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/06/28 21:26:16 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream> // for toupper
+#include <iostream>
 
 int main(int argc, char **argv)
 {
