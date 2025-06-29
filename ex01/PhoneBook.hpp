@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 20:28:59 by mpapin            #+#    #+#             */
-/*   Updated: 2025/06/28 21:23:52 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/06/29 05:12:18 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include <string>
 #include <iostream>
-#include <sstream>
+#include <sstream> //istringstream
+#include <iomanip> //setw
 
 class Contact {
     private:
@@ -56,9 +57,9 @@ class PhoneBook {
         PhoneBook();
         ~PhoneBook();
         
-        void    addContact();
-        void    searchContacts();
-        void    displayAllContacts();
+        void        addContact();
+        void        searchContacts();
+        void        displayAllContacts();
 };
 
 #endif

@@ -1,16 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:08:28 by mpapin            #+#    #+#             */
-/*   Updated: 2025/06/28 21:15:56 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/06/29 05:14:19 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+Contact::Contact() {
+    _firstName = "";
+    _lastName = "";
+    _nickname = "";
+    _phoneNumber = "";
+    _darkSecret = "";
+}
+
+Contact::~Contact() {
+}
 
 std::string Contact::getFirstName() const {
     return(this->_firstName);
