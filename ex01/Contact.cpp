@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:08:28 by mpapin            #+#    #+#             */
-/*   Updated: 2025/06/29 05:14:19 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/06/29 05:18:05 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,10 @@ void Contact::setPhoneNumber(std::string number) {
 
 void Contact::setDarkSecret(std::string secret) {
     this->_darkSecret = secret;
+}
+
+bool Contact::isEmpty() const {
+    return (_firstName.empty() && _lastName.empty() && 
+            _nickname.empty() && _phoneNumber.empty() && 
+            _darkSecret.empty());
 }

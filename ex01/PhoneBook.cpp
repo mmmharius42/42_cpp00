@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:16:47 by mpapin            #+#    #+#             */
-/*   Updated: 2025/06/29 05:15:51 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/06/29 05:21:17 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,8 @@ void PhoneBook::addContact() {
         return;
     }
     this->contacts[_curContacts].setDarkSecret(input);
+    std::cout << std::endl;
     _curContacts = (_curContacts + 1) % 8;
-    if (_nbContacts < 8) {
-    _nbContacts++;
-}
 }
 
 void PhoneBook::searchContacts() {
@@ -90,7 +88,7 @@ void PhoneBook::searchContacts() {
     std::cout << "Last name: " << contacts[index].getLastName() << std::endl;
     std::cout << "Nickname: " << contacts[index].getNickname() << std::endl;
     std::cout << "Phone: " << contacts[index].getPhoneNumber() << std::endl;
-    std::cout << "Secret: " << contacts[index].getDarkSecret() << std::endl;
+    std::cout << "Secret: " << contacts[index].getDarkSecret() << std::endl << std::endl;
 }
 
 std::string	truncate(std::string str)
@@ -113,4 +111,5 @@ void PhoneBook::displayAllContacts() {
                   << std::setw(10) << truncate(contacts[i].getNickname()) << "|"
                   << std::endl;
     }
+    std::cout << std::endl;
 }

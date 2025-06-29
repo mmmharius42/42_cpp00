@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 20:28:44 by mpapin            #+#    #+#             */
-/*   Updated: 2025/06/29 05:10:56 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/06/29 05:18:37 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ int main()
     while(1)
     {
         std::cout << "Write a command (EXIT, ADD, SEARCH): ";
-        std::cin >> input;
-
+        std::getline(std::cin, input);
         if (input == "EXIT")
             break;
         else if (input == "ADD")
