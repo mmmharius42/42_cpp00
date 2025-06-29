@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:16:47 by mpapin            #+#    #+#             */
-/*   Updated: 2025/06/29 05:21:17 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/06/29 05:24:52 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,12 @@ void PhoneBook::addContact() {
         return;
     }
     this->contacts[_curContacts].setDarkSecret(input);
+    std::cout << "Contact ajouté avec succès!" << std::endl;
     std::cout << std::endl;
     _curContacts = (_curContacts + 1) % 8;
+    if (_nbContacts < 8) {
+        _nbContacts++;
+    }
 }
 
 void PhoneBook::searchContacts() {
