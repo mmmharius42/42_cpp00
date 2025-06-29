@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:16:47 by mpapin            #+#    #+#             */
-/*   Updated: 2025/06/29 05:24:52 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/06/29 05:27:10 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,12 +108,18 @@ void PhoneBook::displayAllContacts() {
         return;
     }
     
+    std::cout << std::setw(10) << "index" << "|" 
+        << std::setw(10) << "first name" << "|" 
+        << std::setw(10) << "last name" << "|"
+        << std::setw(10) << "nickname" << "|"
+        << std::endl;
+              
     for (int i = 0; i < _nbContacts; i++) {
         std::cout << std::setw(10) << i << "|"
-                  << std::setw(10) << truncate(contacts[i].getFirstName()) << "|"
-                  << std::setw(10) << truncate(contacts[i].getLastName()) << "|"
-                  << std::setw(10) << truncate(contacts[i].getNickname()) << "|"
-                  << std::endl;
+            << std::setw(10) << truncate(contacts[i].getFirstName()) << "|"
+            << std::setw(10) << truncate(contacts[i].getLastName()) << "|"
+            << std::setw(10) << truncate(contacts[i].getNickname()) << "|"
+            << std::endl;
     }
     std::cout << std::endl;
 }
