@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:16:47 by mpapin            #+#    #+#             */
-/*   Updated: 2025/07/08 22:29:10 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/07/19 23:08:26 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,11 @@ void PhoneBook::addContact() {
         std::cout << "The Max Number of Contact have been reached, delete the fisrt one..." << std::endl;
     }
     std::cout << "First Name of the contact you want to add :" << std::endl;
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+    {
+        std::cout << "Ctrl D catch..." << std::endl;
+        exit(1);
+    }
     if (input.empty()) {
         std::cout << "Erreur: champ vide!" << std::endl;
         return;
@@ -39,7 +43,11 @@ void PhoneBook::addContact() {
     this->contacts[_curContacts].setFirstName(input);
     name = input;
     std::cout << "Last Name of " <<  name << ":" << std::endl;
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+    {
+        std::cout << "Ctrl D catch..." << std::endl;
+        exit(1);
+    }
     if (input.empty()) {
         std::cout << "Erreur: champ vide!" << std::endl;
         return; 
@@ -47,21 +55,33 @@ void PhoneBook::addContact() {
     last_name = input;
     this->contacts[_curContacts].setLastName(input);
     std::cout << "Nickname of " << name << ":" << std::endl;
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+    {
+        std::cout << "Ctrl D catch..." << std::endl;
+        exit(1);
+    }
     if (input.empty()) {
         std::cout << "Erreur: champ vide!" << std::endl;
         return;
     }
     this->contacts[_curContacts].setNickname(input);
     std::cout << "The Phone Number of " << input << ":" << std::endl;
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+    {
+        std::cout << "Ctrl D catch..." << std::endl;
+        exit(1);
+    }
     if (input.empty()) {
         std::cout << "Erreur: champ vide!" << std::endl;
         return;
     }
     this->contacts[_curContacts].setPhoneNumber(input);
     std::cout << "The Darkest secret of " << name << " " << last_name << " :" << std::endl;
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+    {
+        std::cout << "Ctrl D catch..." << std::endl;
+        exit(1);
+    }
     if (input.empty()) {
         std::cout << "Erreur: champ vide!" << std::endl;
         return;
@@ -78,9 +98,18 @@ void PhoneBook::addContact() {
 void PhoneBook::searchContacts() {
     std::string     input;
     
+    if (_nbContacts == 0)
+    {
+        std::cout << "No Contacts registred yet" << std::endl;
+        return;
+    }
     displayAllContacts();
-    std::cout << "Who ?";
-    std::getline(std::cin, input);
+    std::cout << "What Index ?";
+    if (!std::getline(std::cin, input))
+    {
+        std::cout << "Ctrl D catch..." << std::endl;
+        exit(1);
+    }
     std::istringstream iss(input);
     int index;
     
@@ -103,10 +132,6 @@ std::string	truncate(std::string str)
 }
 
 void PhoneBook::displayAllContacts() {
-    if (_nbContacts == 0) {
-        std::cout << "PhoneBook is empty." << std::endl;
-        return;
-    }
     
     std::cout << std::setw(10) << "index";
     std::cout << "|";

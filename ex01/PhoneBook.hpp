@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 20:28:59 by mpapin            #+#    #+#             */
-/*   Updated: 2025/06/29 05:17:52 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/07/19 23:09:22 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <sstream> //istringstream
 #include <iomanip> //setw
 #include <cctype> //tooper
+#include <cstdlib> // exit
 
 class Contact {
     private:
