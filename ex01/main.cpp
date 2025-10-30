@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 20:28:44 by mpapin            #+#    #+#             */
-/*   Updated: 2025/07/19 23:05:19 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/30 04:52:28 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
         std::cout << "Write a command (EXIT, ADD, SEARCH): ";
         if (!std::getline(std::cin, input))
         {
-            std::cout << "Ctrl D catch..." << std::endl;
+            std::cout << "Ctrl D catch ehehe" << std::endl;
             exit(1);
         }
         if (input == "EXIT")
