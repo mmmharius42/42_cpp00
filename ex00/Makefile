@@ -5,7 +5,7 @@ SRC = .
 OBJ = obj
 
 SRCS = megaphone.cpp
-OBJS = $(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
+OBJS = $(addprefix $(OBJ)/, $(notdir $(SRCS:.cpp=.o)))
 
 all: $(OBJ) $(NAME)
 
@@ -16,6 +16,9 @@ $(NAME): $(OBJS)
 	$(CC) $(CCFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJ)/%.o: $(SRC)/%.cpp
+	$(CC) $(CCFLAGS) -c $< -o $@
+
+$(OBJ)/%.o: $(SRC)/src/%.cpp
 	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:
